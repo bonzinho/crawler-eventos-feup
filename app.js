@@ -15,9 +15,9 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(session({ 
 	secret: 'D&@#*(DASKJHDKH!(#&(&@',
-	resave: false,
+	resave: true,
 	saveUninitialized: true,
-	cookie: { secure: true }
+	cookie: { secure: false, maxAge: 6000000 }
 }))
 app.engine('hbs', hbs.express4({
 	defaultLayout: path.join(app.get('views'), 'layouts/home.hbs'),
